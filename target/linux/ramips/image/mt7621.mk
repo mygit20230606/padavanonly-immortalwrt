@@ -744,6 +744,16 @@ define Device/zte_e8820s
 endef
 TARGET_DEVICES += zte_e8820s
 
+define Device/zte_e8820s32
+  $(Device/dsa-migration)
+  $(Device/uimage-lzma-loader)
+  IMAGE_SIZE := 32448k
+  DEVICE_VENDOR := ZTE
+  DEVICE_MODEL := E8820S32
+  DEVICE_PACKAGES := kmod-mt7603e kmod-mt76x2e luci-app-mtwifi kmod-usb3
+endef
+TARGET_DEVICES += zte_e8820s32
+
 define Device/humax_e10
   $(Device/dsa-migration)
   $(Device/uimage-lzma-loader)
