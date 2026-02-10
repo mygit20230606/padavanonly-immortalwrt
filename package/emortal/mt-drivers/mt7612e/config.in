@@ -14,7 +14,7 @@ config MT76X2E_RT_SECOND_CARD
 
 config MT76X2E_AP_LED
 	bool
-	default y
+	default n
 
 config MT76X2E_AP_LLTD
 	bool
