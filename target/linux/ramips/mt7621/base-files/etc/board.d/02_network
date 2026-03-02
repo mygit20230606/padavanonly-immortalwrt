@@ -102,7 +102,6 @@ ramips_setup_interfaces()
 		ucidef_add_switch "switch0" \
 			"0:lan:4" "1:lan:3" "2:lan:2" "3:lan:1" "4:wan:5" "6@eth0"
 		;;
-    zte,e8820s32|\
 	gehua,ghl-r-001)
 		ucidef_set_interfaces_lan_wan "eth0.1 ra0 rai0" "eth0.2"
 		ucidef_add_switch "switch0" \
@@ -204,7 +203,9 @@ ramips_setup_interfaces()
 			"1:lan" "2:lan" "3:lan" "4:lan" "0:wan" "6u@eth0" "5u@eth1"
 	;;
 	xiaoyu,xy-c5|\
+    zte,e8820s32|\
 	lenovo,newifi-d1)
+	    ucidef_set_interfaces_lan_wan "eth0 ra0 rai0" "eth1"
 		ucidef_add_switch "switch0" \
 			"0:lan" "1:lan" "2:lan" "3:lan" "4:wan" "6u@eth0" "5u@eth1"
 		;;
@@ -265,7 +266,6 @@ ramips_setup_macs()
 		label_mac=$wan_mac
 		;;
 	gehua,ghl-r-001|\
-    zte,e8820s32|\
 	netgear,r6220|\
 	netgear,wndr3700-v5)
 		lan_mac=$(cat /sys/class/net/eth0/address)
